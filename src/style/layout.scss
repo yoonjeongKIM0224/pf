@@ -1,0 +1,81 @@
+@import 'common';
+
+// Header
+.header {
+    display: block;
+    @include grid;
+
+    .header_wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header_logo {
+        display: block;
+
+        .logo_item {
+            display: block;
+            font-size: 40px;
+        }
+    }
+
+    .header_nav_list {
+        display: flex;
+
+        > .item {
+            display: block;
+
+            .item_cont {
+                display: block;
+            }
+
+            + .item {
+                margin-left: 16px;
+            }
+        }
+    }
+}
+
+//Aside
+.aside {
+    display: block;
+
+    .aside_wrap {
+        display: block;
+
+        .aside_list {
+            display: block;
+
+            > .item {
+                display: block;
+                width: 200px;
+                height: 70px;
+                background-color: #FAF9FE;
+                border-radius: 16px;
+                
+                > .item_cont {
+                    display: flex;
+                    align-items: center;
+                    width: 100%;
+                    height: 100%;
+                    font-size: 18px;
+                    font-weight: bold;
+                    padding: 20px;
+                }
+
+                &.active {
+                    background-color: $main_color;
+
+                    > .item_cont {
+                        color: #FAF9FE;
+                    }
+                }
+
+                + .item {
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
