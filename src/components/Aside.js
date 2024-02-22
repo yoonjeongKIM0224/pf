@@ -1,7 +1,28 @@
 import { BrowserRouter, Link } from "react-router-dom";
 
 export default function Aside(){
-    const menus = ['About Me', 'Projects', 'Components', 'Design', 'Contact Me'];
+    const menus = [
+        {
+            tit: 'About Me',
+            link: '/'
+        },
+        {
+            tit: 'Projects',
+            link: '/'
+        },
+        {
+            tit: 'Components',
+            link: '/'
+        },
+        {
+            tit: 'Design',
+            link: '/'
+        },
+        {
+            tit: 'Contact Me',
+            link: '/'
+        },
+    ]
 
     return (
         <BrowserRouter>
@@ -9,21 +30,13 @@ export default function Aside(){
                 <aside className="aside">
                     <div className="aside_wrap">
                         <ul className="aside_list">
-                            <li className="item">
-                                <Link to="/aboutme" className="item_cont">About Me</Link>
-                            </li>
-                            <li className="item">
-                                <Link to="/projects" className="item_cont">Projects</Link>
-                            </li>
-                            <li className="item">
-                                <Link to="/components" className="item_cont">Components</Link>
-                            </li>
-                            <li className="item">
-                                <Link to="/design" className="item_cont">Design</Link>
-                            </li>
-                            <li className="item">
-                                <Link to="/contactme" className="item_cont">Contact Me</Link>
-                            </li>
+                            {menus.map((item, idx) => (
+                                <li key={idx} className="item">
+                                    <Link to={item.link} className="item_cont">
+                                        <span className="txt">{item.tit}</span>
+                                    </Link>
+                                </li>
+                            ))}
                         </ul>
                     </div>
                 </aside>
